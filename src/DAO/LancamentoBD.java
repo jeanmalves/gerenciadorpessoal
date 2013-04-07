@@ -1,7 +1,7 @@
-import java.Lancamento;
+import logica.Lancamento;
 
 /**
- * Classe para cadastrar, alterar, excluir, listar e buscar os lançamentos(Entrada ou Saida ). Existe uma associação pois seus métodos recebem como parâmetro o objeto do tipo Lancamento.
+ * Classe para cadastrar, alterar, excluir, listar e buscar os lanï¿½amentos(Entrada ou Saida ). Existe uma associaï¿½ï¿½o pois seus mï¿½todos recebem como parï¿½metro o objeto do tipo Lancamento.
  */
 public class LancamentoBD {
 

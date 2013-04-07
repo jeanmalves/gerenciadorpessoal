@@ -1,7 +1,7 @@
-import java.SaldoInicial;
+import logica.SaldoInicial;
 
 /**
- * Classe para cadastrar, zerar, alterar e buscar o saldo inicial que o sistema iniciará. Existe uma associação pois seus métodos recebem como parâmetro o objeto do tipo SaldoIncial.
+ * Classe para cadastrar, zerar, alterar e buscar o saldo inicial que o sistema iniciarï¿½. Existe uma associaï¿½ï¿½o pois seus mï¿½todos recebem como parï¿½metro o objeto do tipo SaldoIncial.
  */
 public class SaldoInicialBD {
 

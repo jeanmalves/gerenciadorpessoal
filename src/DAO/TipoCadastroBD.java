@@ -1,7 +1,7 @@
-import java.TipoCadastro;
+import logica.TipoCadastro;
 
 /**
- * Classe para cadastrar, alterar e buscar os tipos de cadastro(FonteRenda, Credor e Categoria ). Existe uma associação pois seus métodos recebem como parâmetro o objeto do tipo TipoCadastro.
+ * Classe para cadastrar, alterar e buscar os tipos de cadastro(FonteRenda, Credor e Categoria ). Existe uma associaï¿½ï¿½o pois seus mï¿½todos recebem como parï¿½metro o objeto do tipo TipoCadastro.
  */
 public class TipoCadastroBD {
 
