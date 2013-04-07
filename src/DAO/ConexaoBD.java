@@ -1,7 +1,6 @@
 /*
  * Classe para se conectar com a base de dados. Ao criar a conex�o, ela retorna uma inst�ncia da conex�o.
  */
-
 package DAO;
 import java.sql.*;
 
@@ -25,7 +24,7 @@ public class ConexaoBD
         {
             //carrega o driverdo mysql
             Class.forName("com.mysql.jdbc.Driver");
-            
+           // System.out.println("Driver carregado ");
         }
         catch(ClassNotFoundException e)
         {
