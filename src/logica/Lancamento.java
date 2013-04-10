@@ -7,26 +7,29 @@ public class Lancamento
 {
     protected String data;
     protected String descricao;
-    protected Categoria[] TipoCategoria;
     protected double valor;
+    protected Categoria [] categoria;
     
-    public Lancamento(String d, double v, String desc, Categoria cat)
+    //construtora recebe os dados do lançamento como: data, descrição, valor e um array de categorias.
+    public Lancamento(String d, double v, String desc, Categoria[] cat)
     {
         int i = 0;
+        //instancia o objeto Categoria para agregação
+        this.categoria = new Categoria[cat.length];
         
         this.data      = d;
         this.valor     = v;
         this.descricao = desc;
         
-        while(cat)
+        while(i < cat.length)
         {
-            this.TipoCategoria[i] = cat;
+            this.categoria[i] = cat[i];
             i++;
         }
     }
-    
-    public Lancamento getLancamento()
+    // rever este método. Faz sentido?
+    /*public Lancamento getLancamento()
     {
-        return null;
-    }
+        return categoria;
+    }*/
 }

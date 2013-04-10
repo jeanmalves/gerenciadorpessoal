@@ -3,8 +3,8 @@ package logica;
 /**
  * A classe Controle � respons�vel por distribuir as atividades do sistema por meio de  ouvintes. Precisa "conhecer" quem executar� as atividades. Neste caso, tem associa��o com a classe SaldoInicialBD, LancamentoBD e TipoCadastroBD.
  */
-public class Controle {
-
+public class Controle
+{
 	private Conta conta;
 
 	private Lancamento lancamento;
