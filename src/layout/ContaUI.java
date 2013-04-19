@@ -28,6 +28,7 @@ public class ContaUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jftfSaldoInicial = new javax.swing.JFormattedTextField();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -64,7 +65,7 @@ public class ContaUI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Entradas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         listaEntradas.setAutoCreateRowSorter(true);
-        listaEntradas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        listaEntradas.setFont(new java.awt.Font("Tahoma", 0, 12));
         listaEntradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -100,10 +101,10 @@ public class ContaUI extends javax.swing.JFrame {
         jlbSaldoInicial.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jlbSaldoInicial.setText("Saldo Inicial:");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Mês/Ano de Referência:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setText("Dezembro/2013");
 
         try {
@@ -114,6 +115,9 @@ public class ContaUI extends javax.swing.JFrame {
         jftfSaldoInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jftfSaldoInicial.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jftfSaldoInicial.setName(""); // NOI18N
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
+        jButton1.setLabel("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,10 +133,12 @@ public class ContaUI extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
+                        .addGap(32, 32, 32)
                         .addComponent(jlbSaldoInicial)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jftfSaldoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jftfSaldoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,12 +146,22 @@ public class ContaUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jlbSaldoInicial)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jftfSaldoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                    .addComponent(jftfSaldoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jlbSaldoInicial)
+                .addGap(153, 153, 153))
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(151, 151, 151))
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(153, 153, 153))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Saídas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -153,7 +169,7 @@ public class ContaUI extends javax.swing.JFrame {
         jScrollPane2.setBorder(null);
 
         jTable1.setAutoCreateRowSorter(true);
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -234,10 +250,10 @@ public class ContaUI extends javax.swing.JFrame {
         jtbInfoDespesas.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jtbInfoDespesas);
 
-        jlbInfoDespesa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jlbInfoDespesa.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jlbInfoDespesa.setText("Despesas");
 
-        jlbInfoRecebimentos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jlbInfoRecebimentos.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jlbInfoRecebimentos.setText("Recebimentos");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -271,40 +287,40 @@ public class ContaUI extends javax.swing.JFrame {
         jTable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jTable2);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel3.setText("Resultado do Mês:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel4.setText("Entradas:");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel5.setText("Saídas:");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel6.setText("jLabel6");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel7.setText("jLabel7");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel8.setText("Saldo Acumulado:");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel9.setText("Saldo do Mês:");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel10.setText("Saldo:");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel11.setText("jLabel11");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel12.setText("jLabel12");
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel13.setText("Saldo Anterior:");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel14.setText("jLabel14");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -386,27 +402,27 @@ public class ContaUI extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel13)
                                 .addComponent(jLabel14)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         menuPrincipal.setPreferredSize(new java.awt.Dimension(431, 42));
 
         saldoInicial.setText("Saldo Inicial");
-        saldoInicial.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        saldoInicial.setFont(new java.awt.Font("Segoe UI", 0, 14));
         saldoInicial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         saldoInicial.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         saldoInicial.setMargin(new java.awt.Insets(0, 10, 0, 10));
         menuPrincipal.add(saldoInicial);
 
         fonteRenda.setText("Fontes de Renda");
-        fonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        fonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 14));
         fonteRenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fonteRenda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         fonteRenda.setMargin(new java.awt.Insets(0, 10, 0, 10));
         menuPrincipal.add(fonteRenda);
 
         credores.setText("Credores");
-        credores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        credores.setFont(new java.awt.Font("Segoe UI", 0, 14));
         credores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         credores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         credores.setMargin(new java.awt.Insets(0, 10, 0, 10));
@@ -420,7 +436,7 @@ public class ContaUI extends javax.swing.JFrame {
         menuPrincipal.add(planoContas);
 
         relatorios.setText("Relatórios");
-        relatorios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        relatorios.setFont(new java.awt.Font("Segoe UI", 0, 14));
         relatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         relatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         relatorios.setMargin(new java.awt.Insets(0, 10, 0, 10));
@@ -500,6 +516,7 @@ public class ContaUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu credores;
     private javax.swing.JMenu fonteRenda;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
