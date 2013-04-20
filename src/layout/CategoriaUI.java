@@ -48,34 +48,34 @@ public class CategoriaUI extends javax.swing.JFrame {
         setName("Categoria"); // NOI18N
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Nome:");
 
-        jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
         jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jcbTipoCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fontes de Renda", "Despesa" }));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Tipo :");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/left.png"))); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/right.png"))); // NOI18N
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/delete.png"))); // NOI18N
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/update.png"))); // NOI18N
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -140,7 +140,7 @@ public class CategoriaUI extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jtfNomeCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jcbTipoCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .addComponent(jLabel2))
                 .addGap(116, 116, 116)
