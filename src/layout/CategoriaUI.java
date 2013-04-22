@@ -43,7 +43,7 @@ public class CategoriaUI extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Plano de Contas");
         setName("Categoria"); // NOI18N
         setResizable(false);
@@ -53,7 +53,7 @@ public class CategoriaUI extends javax.swing.JFrame {
 
         jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jcbTipoCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fontes de Renda", "Despesa" }));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));

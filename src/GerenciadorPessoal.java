@@ -1,5 +1,6 @@
 import DAO.*;
 import logica.*;
+import layout.*;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -17,5 +18,8 @@ public class GerenciadorPessoal {
     public static void main(String[] args) {
         // TODO code application logic here
         ConexaoBD cn = new ConexaoBD();
+        ContaUI c = new ContaUI();
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
     }
 }

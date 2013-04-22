@@ -41,12 +41,13 @@ public class FonteRendaUI extends javax.swing.JFrame {
         jbAdd = new javax.swing.JButton();
         jbSave = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Fontes de Renda");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Nome:");
 
-        jtfNomeFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jtfNomeFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,22 +70,22 @@ public class FonteRendaUI extends javax.swing.JFrame {
                 .addContainerGap(124, Short.MAX_VALUE))
         );
 
-        jbLeft.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbLeft.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/left.png"))); // NOI18N
 
-        jbRight.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbRight.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/right.png"))); // NOI18N
 
-        jbDelete.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbDelete.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/delete.png"))); // NOI18N
 
-        jbUpdate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbUpdate.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/update.png"))); // NOI18N
 
-        jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
 
-        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -129,13 +130,11 @@ public class FonteRendaUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
