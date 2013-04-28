@@ -47,27 +47,27 @@ public class SaidaUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jtfDescricao = new javax.swing.JTextField();
-        jMoneyField1 = new logica.JMoneyField();
+        jNumberFormatField1 = new logica.JNumberFormatField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Saídas");
 
-        jbLeft.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbLeft.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/left.png"))); // NOI18N
 
-        jbRight.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbRight.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/right.png"))); // NOI18N
 
-        jbDelete.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbDelete.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/delete.png"))); // NOI18N
 
-        jbUpdate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbUpdate.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/update.png"))); // NOI18N
 
-        jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
 
-        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -108,30 +108,30 @@ public class SaidaUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Data:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setText("Valor:");
 
         jtfData.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        jcbFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel3.setText("Credor:");
 
-        jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel4.setText("Categoria:");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel5.setText("Descrição:");
 
         jtfDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        jMoneyField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jNumberFormatField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,7 +148,6 @@ public class SaidaUI extends javax.swing.JFrame {
                         .addGap(107, 107, 107)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,27 +155,27 @@ public class SaidaUI extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(36, 36, 36)
                                     .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jtfDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(66, 66, 66)
                                     .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(56, 56, 56)
                                     .addComponent(jLabel2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jMoneyField1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(134, 134, 134))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jNumberFormatField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(140, 140, 140))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcbFonteRenda, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
@@ -187,12 +186,12 @@ public class SaidaUI extends javax.swing.JFrame {
                     .addComponent(jcbCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel5)
+                    .addComponent(jtfDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jMoneyField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jNumberFormatField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64))
         );
 
@@ -256,7 +255,7 @@ public class SaidaUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private logica.JMoneyField jMoneyField1;
+    private logica.JNumberFormatField jNumberFormatField1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbAdd;

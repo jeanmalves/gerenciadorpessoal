@@ -1,21 +1,31 @@
 package layout;
+import exceptions.ValorNegativoException;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.*;
+import java.math.BigDecimal;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
+import logica.Controle;
+import logica.JNumberFormatField;
 import ouvintes.OuvinteCategoria;
 import ouvintes.OuvinteCredor;
 import ouvintes.OuvinteFonteRenda;
+import ouvintes.OuvinteSaldoInicial;
 /**
  * Modelo de interface grafica. O objeto desta classe ser� instanciado na main, ser� a primeira janela do sistema que exibir� os totais de entrada no m�s, sa�da, saldo, saldo inicial entre outros. 
  */
 
 public class ContaUI extends javax.swing.JFrame {
-
+    
     /** Creates new form ContaUI */
     public ContaUI() {
-        
+
         initComponents();
+        
+        control = new Controle();
        // fonteRenda.addActionListener(new OuvinteFonteRenda());
         fonteRenda.addMouseListener(new OuvinteFonteRenda());
         credores.addMouseListener(new OuvinteCredor());
@@ -40,8 +50,8 @@ public class ContaUI extends javax.swing.JFrame {
         jlbSaldoInicial = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jMoneyField1 = new logica.JMoneyField();
+        salvarSaldo = new javax.swing.JButton();
+        jnfSaldo = new logica.JNumberFormatField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -123,9 +133,14 @@ public class ContaUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setText("Dezembro/2013");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
+        salvarSaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
+        salvarSaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarSaldoActionPerformed(evt);
+            }
+        });
 
-        jMoneyField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jnfSaldo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,10 +156,10 @@ public class ContaUI extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
                         .addComponent(jlbSaldoInicial)
+                        .addGap(8, 8, 8)
+                        .addComponent(jnfSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jMoneyField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(salvarSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -153,14 +168,13 @@ public class ContaUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlbSaldoInicial, javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jMoneyField1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(jnfSaldo, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(2, 2, 2)
-                            .addComponent(jLabel1)
-                            .addGap(1, 1, 1))
+                            .addComponent(jLabel1))
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(salvarSaldo, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -439,7 +453,7 @@ public class ContaUI extends javax.swing.JFrame {
         credores.setText("Credores");
         credores.setToolTipText("Cadastro, alteração e exclusão de credores.");
         credores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        credores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        credores.setFont(new java.awt.Font("Segoe UI", 0, 14));
         credores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         credores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         credores.setMargin(new java.awt.Insets(0, 10, 0, 10));
@@ -448,7 +462,7 @@ public class ContaUI extends javax.swing.JFrame {
         planoContas.setText("Plano de Contas");
         planoContas.setToolTipText("Cadastro e alteração de categorias do plano de contas.");
         planoContas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        planoContas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        planoContas.setFont(new java.awt.Font("Segoe UI", 0, 14));
         planoContas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         planoContas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planoContas.setMargin(new java.awt.Insets(0, 10, 0, 10));
@@ -464,7 +478,7 @@ public class ContaUI extends javax.swing.JFrame {
         exit.setText("Sair");
         exit.setToolTipText("Encerrar o programa.");
         exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        exit.setFont(new java.awt.Font("Segoe UI", 0, 14));
         exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         exit.setMargin(new java.awt.Insets(0, 10, 0, 10));
@@ -509,6 +523,25 @@ public class ContaUI extends javax.swing.JFrame {
             jConfirm.setVisible(true);
     }//GEN-LAST:event_exitMouseClicked
 
+    private void salvarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarSaldoActionPerformed
+        
+        BigDecimal saldoIncial = null;
+        double valor;
+
+        //Obtem o valor do campo. Caso não seja vazio informa o usuário.   
+        try {
+            saldoIncial = jnfSaldo.getValue();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Digite um valor.");
+        }
+
+        //Faz o cast para double.
+        valor = saldoIncial.doubleValue();
+
+        //Faz a chamada do método para alterar o saldo. 
+        control.alterarSaldoInicial(valor);
+    }//GEN-LAST:event_salvarSaldoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -520,15 +553,15 @@ public class ContaUI extends javax.swing.JFrame {
             public void run() {
                 new ContaUI().setVisible(true);
             }
+             
         });
-
+        
     }
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu credores;
     private javax.swing.JMenu exit;
     private javax.swing.JMenu fonteRenda;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -543,7 +576,6 @@ public class ContaUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private logica.JMoneyField jMoneyField1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -556,11 +588,14 @@ public class ContaUI extends javax.swing.JFrame {
     private javax.swing.JLabel jlbInfoDespesa;
     private javax.swing.JLabel jlbInfoRecebimentos;
     private javax.swing.JLabel jlbSaldoInicial;
+    private logica.JNumberFormatField jnfSaldo;
     private javax.swing.JTable jtbInfoDespesas;
     private javax.swing.JTable listaEntradas;
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu planoContas;
     private javax.swing.JMenu relatorios;
+    private javax.swing.JButton salvarSaldo;
     // End of variables declaration//GEN-END:variables
     private ConfirmJDialog jConfirm;
+    private Controle control;
 }

@@ -6,16 +6,10 @@ package logica;
 public class SaldoInicial
 {
 	private double saldoInicial;
-        
-        //ao iniciar o programa o saldo precisa ser zerado.
-        public SaldoInicial()
-        {
-            this.saldoInicial = 0.00;
-        }
-        
+         
 	public void setSaldo(double val)
         {
-           this.saldoInicial = val;
+            this.saldoInicial = val;  
 	}
 
 	public double getSaldo()

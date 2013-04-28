@@ -169,10 +169,10 @@
                           <Component id="jLabel2" min="-2" pref="140" max="-2" attributes="0"/>
                           <EmptySpace pref="281" max="32767" attributes="0"/>
                           <Component id="jlbSaldoInicial" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Component id="jnfSaldo" min="-2" pref="140" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jMoneyField1" min="-2" pref="140" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="salvarSaldo" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -185,16 +185,15 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jlbSaldoInicial" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jMoneyField1" alignment="2" pref="33" max="32767" attributes="1"/>
+                      <Component id="jnfSaldo" alignment="2" min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" alignment="2" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jButton1" alignment="2" min="-2" pref="33" max="-2" attributes="1"/>
+                      <Component id="salvarSaldo" alignment="2" min="-2" pref="33" max="-2" attributes="1"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="135" max="-2" attributes="0"/>
@@ -289,14 +288,17 @@
             <Property name="text" type="java.lang.String" value="Dezembro/2013"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="salvarSaldo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/icones/save.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salvarSaldoActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="logica.JMoneyField" name="jMoneyField1">
+        <Component class="logica.JNumberFormatField" name="jnfSaldo">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>

@@ -17,7 +17,7 @@ package layout;
 public class ConfirmJDialog extends javax.swing.JDialog {
 
     /** Creates new form ConfirmJDialog */
-    public ConfirmJDialog(java.awt.Frame parent, boolean modal) {
+    public ConfirmJDialog(java.awt.Frame parent,boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -38,7 +38,7 @@ public class ConfirmJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jLMensagem.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLMensagem.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLMensagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLMensagem.setText("Deseja realmente encerrar o programa?");
         jLMensagem.setToolTipText("");

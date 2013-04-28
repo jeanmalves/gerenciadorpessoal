@@ -17,7 +17,7 @@ public class GerenciadorPessoal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ConexaoBD cn = new ConexaoBD();
+       
         ContaUI c = new ContaUI();
         c.setLocationRelativeTo(null);
         c.setVisible(true);

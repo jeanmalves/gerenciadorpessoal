@@ -40,7 +40,7 @@ public class EntradaUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jtfDescricao = new javax.swing.JTextField();
-        jMoneyField1 = new logica.JMoneyField();
+        jNumberFormatField1 = new logica.JNumberFormatField();
         jPanel2 = new javax.swing.JPanel();
         jbLeft = new javax.swing.JButton();
         jbRight = new javax.swing.JButton();
@@ -52,30 +52,30 @@ public class EntradaUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Entradas");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Data:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setText("Valor:");
 
         jtfData.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        jcbFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel3.setText("Fontes de Renda:");
 
-        jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel4.setText("Categoria:");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel5.setText("Descrição:");
 
-        jtfDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jtfDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jMoneyField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jNumberFormatField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,7 +110,7 @@ public class EntradaUI extends javax.swing.JFrame {
                             .addGap(56, 56, 56)
                             .addComponent(jLabel2)
                             .addGap(18, 18, 18)
-                            .addComponent(jMoneyField1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jNumberFormatField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(134, 134, 134))
         );
         jPanel1Layout.setVerticalGroup(
@@ -135,26 +135,26 @@ public class EntradaUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jMoneyField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jNumberFormatField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64))
         );
 
-        jbLeft.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbLeft.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/left.png"))); // NOI18N
 
-        jbRight.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbRight.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/right.png"))); // NOI18N
 
-        jbDelete.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbDelete.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/delete.png"))); // NOI18N
 
-        jbUpdate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbUpdate.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/update.png"))); // NOI18N
 
-        jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
 
-        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -255,7 +255,7 @@ public class EntradaUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private logica.JMoneyField jMoneyField1;
+    private logica.JNumberFormatField jNumberFormatField1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbAdd;
