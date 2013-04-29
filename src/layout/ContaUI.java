@@ -10,10 +10,8 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import logica.Controle;
 import logica.JNumberFormatField;
-import ouvintes.OuvinteCategoria;
 import ouvintes.OuvinteCredor;
 import ouvintes.OuvinteFonteRenda;
-import ouvintes.OuvinteSaldoInicial;
 /**
  * Modelo de interface grafica. O objeto desta classe ser� instanciado na main, ser� a primeira janela do sistema que exibir� os totais de entrada no m�s, sa�da, saldo, saldo inicial entre outros. 
  */
@@ -26,6 +24,11 @@ public class ContaUI extends javax.swing.JFrame {
         initComponents();
         
         control = new Controle();
+        
+        OuvinteSaldoInicial ouvSaldoIni = new OuvinteSaldoInicial(this,control);
+        salvarSaldo.addActionListener(ouvSaldoIni);
+        
+        
        // fonteRenda.addActionListener(new OuvinteFonteRenda());
         fonteRenda.addMouseListener(new OuvinteFonteRenda());
         credores.addMouseListener(new OuvinteCredor());
@@ -34,7 +37,7 @@ public class ContaUI extends javax.swing.JFrame {
         //instancia o objeto da janela de confirmação para encerrar o programa, ConfirmDialog.
         jConfirm = new ConfirmJDialog(null,true);
     }
-
+   
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -525,7 +528,7 @@ public class ContaUI extends javax.swing.JFrame {
 
     private void salvarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarSaldoActionPerformed
         
-        BigDecimal saldoIncial = null;
+       /* BigDecimal saldoIncial = null;
         double valor;
 
         //Obtem o valor do campo. Caso não seja vazio informa o usuário.   
@@ -539,7 +542,7 @@ public class ContaUI extends javax.swing.JFrame {
         valor = saldoIncial.doubleValue();
 
         //Faz a chamada do método para alterar o saldo. 
-        control.alterarSaldoInicial(valor);
+        control.alterarSaldoInicial(valor);*/
     }//GEN-LAST:event_salvarSaldoActionPerformed
 
     /**
@@ -588,7 +591,7 @@ public class ContaUI extends javax.swing.JFrame {
     private javax.swing.JLabel jlbInfoDespesa;
     private javax.swing.JLabel jlbInfoRecebimentos;
     private javax.swing.JLabel jlbSaldoInicial;
-    private logica.JNumberFormatField jnfSaldo;
+    logica.JNumberFormatField jnfSaldo;
     private javax.swing.JTable jtbInfoDespesas;
     private javax.swing.JTable listaEntradas;
     private javax.swing.JMenuBar menuPrincipal;

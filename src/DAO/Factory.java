@@ -4,6 +4,8 @@
  */
 package DAO;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Jeam
@@ -11,7 +13,7 @@ package DAO;
 public class Factory 
 {
     
-    public static SaldoInicialBD criarSaldoInicial()
+    public static SaldoInicialBD criarSaldoInicial() throws SQLException
     {
         return new SaldoInicialBD();
     }

@@ -49,11 +49,35 @@ public class SaldoInicialBD
            System.out.println("Erro ao desconectar do banco de dados" + ex);
         }
     }
-
+    
+    public int verificaExisteSaldoInicial() throws SQLException
+    {
+        Statement st = conexao.getStatement();
+        String buscaSql = "SELECT COUNT(1) FROM gf_saldoinicial";
+  
+         //interface ResultSet permite colher os resultados da execução de nossa query no banco de dados.
+        ResultSet dados = st.executeQuery(buscaSql);
+        int linha = 0;
+        if(dados.next())
+        {
+            linha = dados.getInt(1);
+            
+        }
+       
+         try
+         {
+             conexao.desconectar();
+         } 
+        catch (Exception ex)
+        {
+            System.out.println("Erro ao desconectar do banco de dados" + ex);
+        }   
+         return linha;
+    }
     public SaldoInicial buscar() throws SQLException
     {
         Statement st = conexao.getStatement();
-        String buscaSql = "SELECT sld_valor FROM gf_saldoinicial LIMIT 1";
+        String buscaSql = "SELECT sld_valor FROM gf_saldoinicial";
 
         //interface ResultSet permite colher os resultados da execução de nossa query no banco de dados.
         ResultSet dados = st.executeQuery(buscaSql);

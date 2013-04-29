@@ -6,7 +6,7 @@ package logica;
 public class SaldoInicial
 {
 	private double saldoInicial;
-         
+   
 	public void setSaldo(double val)
         {
             this.saldoInicial = val;  
