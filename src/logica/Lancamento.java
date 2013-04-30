@@ -1,5 +1,7 @@
 package logica;
 
+import DAO.Categoria;
+
 /**
  * Classe base para os lan�amentos. Cada lan�amento herda os m�todos gen�ricos e implementa m�todos em sua particularidade.
  */

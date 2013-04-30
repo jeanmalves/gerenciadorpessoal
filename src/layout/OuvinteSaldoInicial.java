@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import logica.Controle;
+import logica.SaldoInicialControle;
 
 
 /**
@@ -14,15 +14,15 @@ import logica.Controle;
  */
 public class OuvinteSaldoInicial implements ActionListener
 {
-    private Controle crtl;
+    private SaldoInicialControle ctrl;
     private ContaUI formConta;
     
     //Atribui os objetos da interface gráfica conta(tela inicial) e 
     //o objto do controle.
-    public OuvinteSaldoInicial(ContaUI c, Controle ctl)
+    public OuvinteSaldoInicial(ContaUI c)
     {
         formConta = c;
-        crtl      = ctl;
+        ctrl      = new SaldoInicialControle();
     }
     @Override
     public void actionPerformed(ActionEvent ae)
@@ -51,7 +51,8 @@ public class OuvinteSaldoInicial implements ActionListener
             valor = val.doubleValue();
             
             //Faz a chamada do método para alterar o saldo. 
-            crtl.alterarSaldoInicial(valor);
+            ctrl.alterarSaldoInicial(valor);
+            
         }
     }
     

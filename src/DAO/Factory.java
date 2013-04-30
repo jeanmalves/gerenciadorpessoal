@@ -17,6 +17,10 @@ public class Factory
     {
         return new SaldoInicialBD();
     }
-            
+        
+     public static CategoriaBD criarCategoria() throws SQLException
+    {
+        return new CategoriaBD();
+    }
             
 }

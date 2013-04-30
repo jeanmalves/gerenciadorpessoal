@@ -16,10 +16,11 @@ public class GerenciadorPessoal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-       
-        ContaUI c = new ContaUI();
-        c.setLocationRelativeTo(null);
-        c.setVisible(true);
+  
+        ContaControle ctrl = new ContaControle();
+        
+        ContaUI c = new ContaUI(ctrl);
+        
+        
     }
 }

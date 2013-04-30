@@ -1,5 +1,7 @@
 package logica;
 
+import DAO.Categoria;
+
 /**
  * Classe derivada da classe Lan�amento. Agrega v�rias fontes de renda para fins espec�ficos de registro.
  */

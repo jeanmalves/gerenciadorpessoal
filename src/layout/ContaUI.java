@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-import logica.Controle;
+import logica.ContaControle;
 import logica.JNumberFormatField;
 import ouvintes.OuvinteCredor;
 import ouvintes.OuvinteFonteRenda;
@@ -19,25 +19,45 @@ import ouvintes.OuvinteFonteRenda;
 public class ContaUI extends javax.swing.JFrame {
     
     /** Creates new form ContaUI */
-    public ContaUI() {
+    public ContaUI(ContaControle c) {
+        
+        control = c;
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
 
-        initComponents();
+            @Override
+            public void run()
+            {
+               exibeContaUI();
+            } 
+        });
+
+    }
+    
+    private void exibeContaUI()
+    {
+        initComponents(); 
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
         
-        control = new Controle();
         
-        OuvinteSaldoInicial ouvSaldoIni = new OuvinteSaldoInicial(this,control);
+         OuvinteSaldoInicial ouvSaldoIni = new OuvinteSaldoInicial(this);
         salvarSaldo.addActionListener(ouvSaldoIni);
         
         
        // fonteRenda.addActionListener(new OuvinteFonteRenda());
         fonteRenda.addMouseListener(new OuvinteFonteRenda());
         credores.addMouseListener(new OuvinteCredor());
-        planoContas.addMouseListener(new OuvinteCategoria());
+        
+       
         
         //instancia o objeto da janela de confirmação para encerrar o programa, ConfirmDialog.
         jConfirm = new ConfirmJDialog(null,true);
+        
+        categoria = new CategoriaUI();
     }
-   
+    
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -137,11 +157,7 @@ public class ContaUI extends javax.swing.JFrame {
         jLabel2.setText("Dezembro/2013");
 
         salvarSaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
-        salvarSaldo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvarSaldoActionPerformed(evt);
-            }
-        });
+        salvarSaldo.setToolTipText("Salvar Saldo Inicial");
 
         jnfSaldo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
@@ -469,6 +485,11 @@ public class ContaUI extends javax.swing.JFrame {
         planoContas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         planoContas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planoContas.setMargin(new java.awt.Insets(0, 10, 0, 10));
+        planoContas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                planoContasMouseClicked(evt);
+            }
+        });
         menuPrincipal.add(planoContas);
 
         relatorios.setText("Relatórios");
@@ -526,40 +547,13 @@ public class ContaUI extends javax.swing.JFrame {
             jConfirm.setVisible(true);
     }//GEN-LAST:event_exitMouseClicked
 
-    private void salvarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarSaldoActionPerformed
-        
-       /* BigDecimal saldoIncial = null;
-        double valor;
+    private void planoContasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planoContasMouseClicked
+       if(evt.getSource() == planoContas)
+           categoria.setLocationRelativeTo(null);
+           categoria.setVisible(true);
+    }//GEN-LAST:event_planoContasMouseClicked
 
-        //Obtem o valor do campo. Caso não seja vazio informa o usuário.   
-        try {
-            saldoIncial = jnfSaldo.getValue();
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Digite um valor.");
-        }
-
-        //Faz o cast para double.
-        valor = saldoIncial.doubleValue();
-
-        //Faz a chamada do método para alterar o saldo. 
-        control.alterarSaldoInicial(valor);*/
-    }//GEN-LAST:event_salvarSaldoActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                new ContaUI().setVisible(true);
-            }
-             
-        });
-        
-    }
+ 
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu credores;
@@ -600,5 +594,6 @@ public class ContaUI extends javax.swing.JFrame {
     private javax.swing.JButton salvarSaldo;
     // End of variables declaration//GEN-END:variables
     private ConfirmJDialog jConfirm;
-    private Controle control;
+    private ContaControle control;
+    private CategoriaUI categoria;
 }

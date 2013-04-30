@@ -59,6 +59,9 @@
               <Insets value="[0, 10, 0, 10]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="planoContasMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="relatorios">
           <Properties>
@@ -293,10 +296,8 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/icones/save.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Salvar Saldo Inicial"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salvarSaldoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="logica.JNumberFormatField" name="jnfSaldo">
           <Properties>

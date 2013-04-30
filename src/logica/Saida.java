@@ -1,5 +1,7 @@
 package logica;
 
+import DAO.Categoria;
+
 /**
  * Classe derivada da classe Lan�amento. Agrega v�rios credores para fins espec�ficos de registro.
  */

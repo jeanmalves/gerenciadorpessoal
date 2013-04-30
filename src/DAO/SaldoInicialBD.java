@@ -1,8 +1,5 @@
 package DAO;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import logica.SaldoInicial;
 /**
  * Classe para cadastrar, zerar, alterar e buscar o saldo inicial que o sistema iniciar�. Existe uma associa��o pois seus m�todos recebem como par�metro o objeto do tipo SaldoIncial.
  */
@@ -58,10 +55,10 @@ public class SaldoInicialBD
          //interface ResultSet permite colher os resultados da execução de nossa query no banco de dados.
         ResultSet dados = st.executeQuery(buscaSql);
         int linha = 0;
-        if(dados.next())
+        while(dados.next())
         {
             linha = dados.getInt(1);
-            
+             //System.out.println("cont"+linha);
         }
        
          try

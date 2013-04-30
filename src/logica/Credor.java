@@ -1,5 +1,7 @@
 package logica;
 
+import DAO.TipoCadastro;
+
 /**
  * Classe derivada da classe TipoCadastro.
  */

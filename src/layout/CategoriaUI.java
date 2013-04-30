@@ -19,6 +19,11 @@ public class CategoriaUI extends javax.swing.JFrame {
     /** Creates new form CategoriaUI */
     public CategoriaUI() {
         initComponents();
+        
+        //Ouvinte da categoria de lancamento.
+        OuvinteCategoria cat = new OuvinteCategoria(this);
+        salvarCategoria.addActionListener(cat);
+        
     }
 
     /** This method is called from within the constructor to
@@ -37,7 +42,7 @@ public class CategoriaUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        salvarCategoria = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -51,10 +56,15 @@ public class CategoriaUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Nome:");
 
-        jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jcbTipoCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fontes de Renda", "Despesa" }));
+        jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbTipoCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Receita", "Despesa" }));
+        jcbTipoCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbTipoCategoriaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -63,8 +73,8 @@ public class CategoriaUI extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/left.png"))); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
+        salvarCategoria.setFont(new java.awt.Font("Tahoma", 1, 18));
+        salvarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/right.png"))); // NOI18N
@@ -99,7 +109,7 @@ public class CategoriaUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(salvarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -107,7 +117,7 @@ public class CategoriaUI extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(salvarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,6 +172,10 @@ public class CategoriaUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jcbTipoCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTipoCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbTipoCategoriaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -199,7 +213,6 @@ public class CategoriaUI extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
@@ -208,7 +221,8 @@ public class CategoriaUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JComboBox jcbTipoCategoria;
-    private javax.swing.JTextField jtfNomeCategoria;
+    javax.swing.JComboBox jcbTipoCategoria;
+    javax.swing.JTextField jtfNomeCategoria;
+    private javax.swing.JButton salvarCategoria;
     // End of variables declaration//GEN-END:variables
 }
