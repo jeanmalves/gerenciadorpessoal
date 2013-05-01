@@ -19,6 +19,9 @@ public class FonteRendaUI extends javax.swing.JFrame {
     /** Creates new form FonteRendaUI */
     public FonteRendaUI() {
         initComponents();
+        
+        //Ouvinte da categoria.
+        jbSave.addActionListener(new OuvinteFonteRenda(this));
     }
 
     /** This method is called from within the constructor to
@@ -47,7 +50,7 @@ public class FonteRendaUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Nome:");
 
-        jtfNomeFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jtfNomeFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,7 +88,7 @@ public class FonteRendaUI extends javax.swing.JFrame {
         jbAdd.setFont(new java.awt.Font("Tahoma", 1, 18));
         jbAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
 
-        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jbSave.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jbSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/save.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -190,6 +193,6 @@ public class FonteRendaUI extends javax.swing.JFrame {
     private javax.swing.JButton jbRight;
     private javax.swing.JButton jbSave;
     private javax.swing.JButton jbUpdate;
-    private javax.swing.JTextField jtfNomeFonteRenda;
+    javax.swing.JTextField jtfNomeFonteRenda;
     // End of variables declaration//GEN-END:variables
 }

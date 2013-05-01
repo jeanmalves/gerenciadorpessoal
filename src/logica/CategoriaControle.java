@@ -20,6 +20,7 @@ public class CategoriaControle {
     
     private Categoria cat;
     private CategoriaBD catBD; 
+    
     public CategoriaControle()
     {
         cat = new Categoria();
@@ -29,7 +30,7 @@ public class CategoriaControle {
             }
             catch (SQLException ex)
             {
-                System.out.println("Não foi possível criar o saldo inicial. " + ex);
+                System.out.println("Não foi possível criar a categoria. " + ex);
             }
     }
     

@@ -1,5 +1,6 @@
 package logica;
 
+import DAO.FonteRenda;
 import DAO.Categoria;
 
 /**

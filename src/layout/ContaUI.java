@@ -11,7 +11,6 @@ import javax.swing.*;
 import logica.ContaControle;
 import logica.JNumberFormatField;
 import ouvintes.OuvinteCredor;
-import ouvintes.OuvinteFonteRenda;
 /**
  * Modelo de interface grafica. O objeto desta classe ser� instanciado na main, ser� a primeira janela do sistema que exibir� os totais de entrada no m�s, sa�da, saldo, saldo inicial entre outros. 
  */
@@ -45,15 +44,13 @@ public class ContaUI extends javax.swing.JFrame {
         salvarSaldo.addActionListener(ouvSaldoIni);
         
        // fonteRenda.addActionListener(new OuvinteFonteRenda());
-        fonteRenda.addMouseListener(new OuvinteFonteRenda());
+      //  fonteRenda.addMouseListener(new OuvinteFonteRenda());
         credores.addMouseListener(new OuvinteCredor());
-        
-       
-        
+    
         //instancia o objeto da janela de confirmação para encerrar o programa, ConfirmDialog.
-        jConfirm = new ConfirmJDialog(null,true);
-        
-        categoria = new CategoriaUI();
+        jConfirm     = new ConfirmJDialog(null,true);
+        categoria    = new CategoriaUI();
+        fonteRendaUI = new FonteRendaUI();
     }
     
     
@@ -466,6 +463,11 @@ public class ContaUI extends javax.swing.JFrame {
         fonteRenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fonteRenda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         fonteRenda.setMargin(new java.awt.Insets(0, 10, 0, 10));
+        fonteRenda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fonteRendaMouseClicked(evt);
+            }
+        });
         menuPrincipal.add(fonteRenda);
 
         credores.setText("Credores");
@@ -552,6 +554,12 @@ public class ContaUI extends javax.swing.JFrame {
            categoria.setVisible(true);
     }//GEN-LAST:event_planoContasMouseClicked
 
+    private void fonteRendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fonteRendaMouseClicked
+       if(evt.getSource() == fonteRenda)
+           fonteRendaUI.setLocationRelativeTo(null);
+           fonteRendaUI.setVisible(true);
+    }//GEN-LAST:event_fonteRendaMouseClicked
+
  
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -595,4 +603,5 @@ public class ContaUI extends javax.swing.JFrame {
     private ConfirmJDialog jConfirm;
     private ContaControle control;
     private CategoriaUI categoria;
+    private FonteRendaUI fonteRendaUI;
 }

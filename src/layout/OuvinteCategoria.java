@@ -56,7 +56,7 @@ public class OuvinteCategoria implements ActionListener
             //instancia o metodo para cadastrar a categoria.
             ctrl.cadastrarCategoria(nome, tipoCategoria);
             
-            //limpando os campos do formulario.
+            //limpa os campos do formulario.
             categoria.jtfNomeCategoria.setText("");
             categoria.jcbTipoCategoria.setSelectedIndex(0);
         }
