@@ -9,12 +9,12 @@ public class TipoCadastro
         
     public boolean setNome(String n)
     {
-        this.nome = n;
+        nome = n;
         return true;
     }
 
     public String getNome()
     {
-        return this.nome;
+        return nome;
     }
 }

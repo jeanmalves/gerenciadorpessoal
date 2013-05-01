@@ -8,6 +8,8 @@ import DAO.Categoria;
 import DAO.CategoriaBD;
 import DAO.Factory;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,6 +46,19 @@ public class CategoriaControle {
          {
              cat.setTipo(2);
          }
-         JOptionPane.showMessageDialog(null, "Saldo cadastrado.");
+        try 
+        {
+            catBD.inserir(cat);
+            JOptionPane.showMessageDialog(null, "Categoria cadastrada.");
+        }
+        catch (SQLException ex)
+        {
+            System.out.println("erro ao cadastrar a categoria "+ex);
+        }
+        catch(IllegalArgumentException e)
+        {
+            JOptionPane.showMessageDialog(null, "Preencha os campos corretamente.");
+        }
+         
      }
 }

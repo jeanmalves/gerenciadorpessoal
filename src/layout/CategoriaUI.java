@@ -18,12 +18,11 @@ public class CategoriaUI extends javax.swing.JFrame {
 
     /** Creates new form CategoriaUI */
     public CategoriaUI() {
-        initComponents();
+        initComponents(); 
         
-        //Ouvinte da categoria de lancamento.
+         //Ouvinte da categoria.
         OuvinteCategoria cat = new OuvinteCategoria(this);
         salvarCategoria.addActionListener(cat);
-        
     }
 
     /** This method is called from within the constructor to
@@ -56,15 +55,10 @@ public class CategoriaUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Nome:");
 
-        jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
         jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jcbTipoCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Receita", "Despesa" }));
-        jcbTipoCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbTipoCategoriaActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -172,11 +166,7 @@ public class CategoriaUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcbTipoCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTipoCategoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcbTipoCategoriaActionPerformed
-
-    /**
+     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -193,13 +183,13 @@ public class CategoriaUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CategoriaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CredorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CategoriaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CredorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CategoriaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CredorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CategoriaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CredorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -211,6 +201,7 @@ public class CategoriaUI extends javax.swing.JFrame {
             }
         });
     }
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;

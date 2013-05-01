@@ -10,12 +10,12 @@ public class Categoria extends TipoCadastro
 
     public boolean setTipo(int t)
     {
-        this.tipo = t;
+        tipo = t;
         return true;
     }
 
     public int getTipo()
     {
-        return this.tipo;
+        return tipo;
     }
 }

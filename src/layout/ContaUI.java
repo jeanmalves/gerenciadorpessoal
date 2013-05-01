@@ -40,10 +40,9 @@ public class ContaUI extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         
-        
-         OuvinteSaldoInicial ouvSaldoIni = new OuvinteSaldoInicial(this);
+        //Instancia do ouvinte do saldo inicial.
+        OuvinteSaldoInicial ouvSaldoIni = new OuvinteSaldoInicial(this);
         salvarSaldo.addActionListener(ouvSaldoIni);
-        
         
        // fonteRenda.addActionListener(new OuvinteFonteRenda());
         fonteRenda.addMouseListener(new OuvinteFonteRenda());

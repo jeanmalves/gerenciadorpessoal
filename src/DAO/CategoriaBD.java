@@ -15,10 +15,18 @@ public class CategoriaBD
     
     public void inserir(Categoria obj) throws SQLException
     {
+        //conecta com o banco de dados.
         conexao.conectar();
         Statement st = conexao.getStatement();
-        st.executeUpdate((new StringBuilder()).append("INSERT INTO gf_categoria(ctg_nome, ctg_tipo) VALUES('").append(obj.getNome()).append(",").append(obj.getTipo()).append("')").toString());
-        
+       
+        try
+        {
+            st.executeUpdate("INSERT INTO gf_categoria(ctg_nome, ctg_tipo) VALUES('"+obj.getNome()+"','"+obj.getTipo()+"')");
+        }
+        catch(SQLSyntaxErrorException e)
+        {
+            System.out.println("erro desintax mysql ");
+        }
          try 
         {
             conexao.desconectar();
