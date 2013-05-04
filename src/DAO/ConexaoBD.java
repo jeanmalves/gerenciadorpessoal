@@ -18,7 +18,7 @@ public class ConexaoBD
         return instance;
     }
 
-    public ConexaoBD()
+    private ConexaoBD()
     {
         try
         {

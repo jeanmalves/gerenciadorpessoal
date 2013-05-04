@@ -8,4 +8,6 @@ import DAO.TipoCadastro;
 public class FonteRenda extends TipoCadastro
 {
 
+    private int fonteRendaId;
+    
 }

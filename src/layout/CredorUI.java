@@ -19,6 +19,9 @@ public class CredorUI extends javax.swing.JFrame {
     /** Creates new form CredorUI */
     public CredorUI() {
         initComponents();
+        
+        //ouvinte do Credor.
+        jbSave.addActionListener(new OuvinteCredor(this));
     }
 
     /** This method is called from within the constructor to
@@ -48,7 +51,7 @@ public class CredorUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel1.setText("Nome:");
 
-        jtfNomeCredor.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jtfNomeCredor.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,6 +194,6 @@ public class CredorUI extends javax.swing.JFrame {
     private javax.swing.JButton jbRight;
     private javax.swing.JButton jbSave;
     private javax.swing.JButton jbUpdate;
-    private javax.swing.JTextField jtfNomeCredor;
+    javax.swing.JTextField jtfNomeCredor;
     // End of variables declaration//GEN-END:variables
 }

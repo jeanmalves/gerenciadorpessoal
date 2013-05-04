@@ -1,7 +1,6 @@
 package DAO;
 
 import DAO.SaldoInicial;
-import logica.Lancamento;
 
 /**
  * A classe Conta agrega lan�amentos do tipo Lancamento(Entrada e Saida). Realiza os c�lculos de total de receitas, total de despesas, o resultado no m�s(entradas - saidas), gera relatorios e tamb�m o saldo dispon�vel.

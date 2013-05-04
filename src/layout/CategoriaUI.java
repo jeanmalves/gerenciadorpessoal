@@ -57,7 +57,7 @@ public class CategoriaUI extends javax.swing.JFrame {
 
         jtfNomeCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
 
-        jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jcbTipoCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jcbTipoCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Receita", "Despesa" }));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));

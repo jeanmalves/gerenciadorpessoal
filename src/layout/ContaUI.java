@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import logica.ContaControle;
 import logica.JNumberFormatField;
-import ouvintes.OuvinteCredor;
 /**
  * Modelo de interface grafica. O objeto desta classe ser� instanciado na main, ser� a primeira janela do sistema que exibir� os totais de entrada no m�s, sa�da, saldo, saldo inicial entre outros. 
  */
@@ -45,12 +44,14 @@ public class ContaUI extends javax.swing.JFrame {
         
        // fonteRenda.addActionListener(new OuvinteFonteRenda());
       //  fonteRenda.addMouseListener(new OuvinteFonteRenda());
-        credores.addMouseListener(new OuvinteCredor());
+      //  credores.addMouseListener(new OuvinteCredor());
     
         //instancia o objeto da janela de confirmação para encerrar o programa, ConfirmDialog.
         jConfirm     = new ConfirmJDialog(null,true);
         categoria    = new CategoriaUI();
         fonteRendaUI = new FonteRendaUI();
+        CredorUI     = new CredorUI();
+        
     }
     
     
@@ -97,6 +98,8 @@ public class ContaUI extends javax.swing.JFrame {
         fonteRenda = new javax.swing.JMenu();
         credores = new javax.swing.JMenu();
         planoContas = new javax.swing.JMenu();
+        entradas = new javax.swing.JMenu();
+        saidas = new javax.swing.JMenu();
         relatorios = new javax.swing.JMenu();
         exit = new javax.swing.JMenu();
 
@@ -473,16 +476,21 @@ public class ContaUI extends javax.swing.JFrame {
         credores.setText("Credores");
         credores.setToolTipText("Cadastro, alteração e exclusão de credores.");
         credores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        credores.setFont(new java.awt.Font("Segoe UI", 0, 14));
+        credores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         credores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         credores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         credores.setMargin(new java.awt.Insets(0, 10, 0, 10));
+        credores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                credoresMouseClicked(evt);
+            }
+        });
         menuPrincipal.add(credores);
 
         planoContas.setText("Plano de Contas");
         planoContas.setToolTipText("Cadastro e alteração de categorias do plano de contas.");
         planoContas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        planoContas.setFont(new java.awt.Font("Segoe UI", 0, 14));
+        planoContas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         planoContas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         planoContas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planoContas.setMargin(new java.awt.Insets(0, 10, 0, 10));
@@ -492,6 +500,34 @@ public class ContaUI extends javax.swing.JFrame {
             }
         });
         menuPrincipal.add(planoContas);
+
+        entradas.setText("Entradas");
+        entradas.setToolTipText("Cadastro e alteração de entradas");
+        entradas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        entradas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        entradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        entradas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        entradas.setMargin(new java.awt.Insets(0, 10, 0, 10));
+        entradas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                entradasMouseClicked(evt);
+            }
+        });
+        menuPrincipal.add(entradas);
+
+        saidas.setText("Saidas");
+        saidas.setToolTipText("Cadastro e alteração de entradas");
+        saidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        saidas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        saidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        saidas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        saidas.setMargin(new java.awt.Insets(0, 10, 0, 10));
+        saidas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saidasMouseClicked(evt);
+            }
+        });
+        menuPrincipal.add(saidas);
 
         relatorios.setText("Relatórios");
         relatorios.setFont(new java.awt.Font("Segoe UI", 0, 14));
@@ -560,10 +596,28 @@ public class ContaUI extends javax.swing.JFrame {
            fonteRendaUI.setVisible(true);
     }//GEN-LAST:event_fonteRendaMouseClicked
 
+    private void credoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_credoresMouseClicked
+        if(evt.getSource() == credores)
+           CredorUI.setLocationRelativeTo(null);
+           CredorUI.setVisible(true);
+    }//GEN-LAST:event_credoresMouseClicked
+
+    private void entradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entradasMouseClicked
+        entradaUI    = new EntradaUI(); 
+        if(evt.getSource() == entradas)
+           entradaUI.setLocationRelativeTo(null);
+           entradaUI.setVisible(true); 
+    }//GEN-LAST:event_entradasMouseClicked
+
+    private void saidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saidasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saidasMouseClicked
+
  
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu credores;
+    private javax.swing.JMenu entradas;
     private javax.swing.JMenu exit;
     private javax.swing.JMenu fonteRenda;
     private javax.swing.JLabel jLabel1;
@@ -598,10 +652,13 @@ public class ContaUI extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu planoContas;
     private javax.swing.JMenu relatorios;
+    private javax.swing.JMenu saidas;
     private javax.swing.JButton salvarSaldo;
     // End of variables declaration//GEN-END:variables
     private ConfirmJDialog jConfirm;
     private ContaControle control;
     private CategoriaUI categoria;
     private FonteRendaUI fonteRendaUI;
+    private CredorUI CredorUI;
+    private EntradaUI entradaUI;
 }

@@ -1,5 +1,7 @@
 package logica;
 
+import DAO.Lancamento;
+import DAO.Credor;
 import DAO.Categoria;
 
 /**

@@ -20,7 +20,7 @@ public class FonteRendaUI extends javax.swing.JFrame {
     public FonteRendaUI() {
         initComponents();
         
-        //Ouvinte da categoria.
+        //Ouvinte da fonte de renda.
         jbSave.addActionListener(new OuvinteFonteRenda(this));
     }
 

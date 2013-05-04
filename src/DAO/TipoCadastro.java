@@ -5,6 +5,7 @@ package DAO;
  */
 public class TipoCadastro
 {
+    private int    id;
     private String nome;
         
     public boolean setNome(String n)
@@ -16,5 +17,16 @@ public class TipoCadastro
     public String getNome()
     {
         return nome;
+    }
+    
+    public boolean setId(int n)
+    {
+        id = n;
+        return true;
+    }
+    
+    public int getId()
+    {
+        return id;
     }
 }

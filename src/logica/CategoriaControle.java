@@ -18,12 +18,10 @@ import javax.swing.JOptionPane;
  */
 public class CategoriaControle {
     
-    private Categoria cat;
     private CategoriaBD catBD; 
     
     public CategoriaControle()
     {
-        cat = new Categoria();
         try
             {
                 catBD = Factory.criarCategoria();
@@ -36,7 +34,7 @@ public class CategoriaControle {
     
      public void cadastrarCategoria(String nome, String tipo) throws IllegalArgumentException
      {
-         
+         Categoria cat = new Categoria();
          cat.setNome(nome);
          
          if(tipo.equals("Receita"))

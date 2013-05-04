@@ -27,5 +27,14 @@ public class Factory
     {
         return new FonteRendaBD();
     }
+    
+    public static CredorBD criarCredor() throws SQLException
+    {
+        return new CredorBD();
+    }
+     public static EntradaBD criarEntrada() throws SQLException
+    {
+        return new EntradaBD();
+    }
             
 }
