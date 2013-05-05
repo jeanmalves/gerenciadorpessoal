@@ -29,4 +29,9 @@ public class TipoCadastro
     {
         return id;
     }
+    //metodo sobrescrito para poder exibir corretamente o nome da fonte no jcombobox.
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

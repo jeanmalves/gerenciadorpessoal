@@ -10,16 +10,16 @@ import java.sql.*;
  *
  * @author Jeam
  */
-public class EntradaBD
+public class SaidaBD
 {
     private ConexaoBD conexao;
     
-    public EntradaBD() throws SQLException
+    public SaidaBD() throws SQLException
     {
         conexao = ConexaoBD.getInstance();
     }
     
-     public void inserir(Entrada obj) throws SQLException
+     public void inserir(Saida obj) throws SQLException
     {
         //conecta com o banco de dados.
         conexao.conectar();
@@ -27,8 +27,9 @@ public class EntradaBD
        
         try
         {
-            st.executeUpdate("INSERT INTO gf_entrada (fre_id, ctg_id, ent_data, ent_valor, ent_descricao) "+
-                             "VALUES('"+obj.fonte.getId()+"','"+obj.categoria.getId()+"','"+obj.getData()+"','"+
+            //comando SQL para cadastro, caso haja erro é lançada uma exception.
+            st.executeUpdate("INSERT INTO gf_saida (ctg_id, crd_id, sai_data, sai_valor, sai_descricao) "+
+                             "VALUES('"+obj.categoria.getId()+"','"+obj.credor.getId()+"','"+obj.getData()+"','"+
                              obj.getValor()+"','"+obj.getDescricao()+"')");
         }
         catch(SQLSyntaxErrorException e)
@@ -44,6 +45,4 @@ public class EntradaBD
             System.out.println("Erro ao desconectar do banco de dados" + ex);
         }
     } 
-    
-    
 }

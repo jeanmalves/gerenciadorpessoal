@@ -48,12 +48,12 @@ public class CategoriaBD
             return null;
     }
     
-     public ArrayList<Categoria> listarCategorias() throws SQLException
+     public ArrayList<Categoria> listarCategorias(int tipo) throws SQLException
     {   
         //conecta com o banco de dados.
         conexao.conectar();
         Statement st = conexao.getStatement();
-        String buscaSql = "SELECT ctg_id, ctg_nome FROM gf_categoria WHERE ctg_tipo = 1";
+        String buscaSql = "SELECT ctg_id, ctg_nome FROM gf_categoria WHERE ctg_tipo = '"+tipo+"'";
 
         //interface ResultSet permite colher os resultados da execução de nossa query no banco de dados.
         ResultSet dados = st.executeQuery(buscaSql);

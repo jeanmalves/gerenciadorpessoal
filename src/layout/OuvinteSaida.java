@@ -6,9 +6,9 @@ package layout;
 
 import DAO.Categoria;
 import DAO.CategoriaBD;
+import DAO.Credor;
+import DAO.CredorBD;
 import DAO.Factory;
-import DAO.FonteRenda;
-import DAO.FonteRendaBD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
@@ -17,71 +17,71 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import logica.EntradaControle;
+import logica.SaidaControle;
 
 /**
  *
  * @author Jeam
  */
-public class OuvinteEntrada implements ActionListener
+public class OuvinteSaida  implements ActionListener
 {
-    private EntradaControle ctrl;
-    private EntradaUI entradaUI;
+    private SaidaControle ctrl;
+    private SaidaUI       saidaUI;
     
-    public OuvinteEntrada(EntradaUI ent)
+    public OuvinteSaida(SaidaUI sd)
     {
-        entradaUI = ent;
-        ctrl      = new EntradaControle();
-        this.carregarJComboboxFonteRenda();
+        saidaUI = sd;
+        ctrl      = new SaidaControle();
+        this.carregarJComboboxCredor();
         this.carregarJComboboxCategoria();
+        
     }
     
     @Override
     public void actionPerformed(ActionEvent ae)
     {
          //Obtem a fonte do evento.
-        JButton ent = (javax.swing.JButton)(ae.getSource());
+        JButton sd = (javax.swing.JButton)(ae.getSource());
         
         //variaveis locais e referências de objetos.
         String      data = null;
         Date        dt = null;
         String      descricao = null;
-        FonteRenda  fonteRenda = null ;
+        Credor      credor = null ;
         Categoria   tipoCategoria = null;
         BigDecimal  val = null;
         double      valor = 0;
 
-         //testa se é o evento do botão correto.
-        if(ae.getSource() == ent)
+        //instancia de classe para formatar datas.
+        SimpleDateFormat data1 = new SimpleDateFormat( "dd/MM/yyyy" );  
+         data          = saidaUI.jtfData.getText();
+        try
         {
-            //instancia de classe para formatar datas.
-            SimpleDateFormat data1 = new SimpleDateFormat( "dd/MM/yyyy" );  
-            data          = entradaUI.jtfData.getText();
-            try
-            {
-                dt = data1.parse(data);
-                SimpleDateFormat data2 = new SimpleDateFormat( "yyyy-MM-dd" );   
-                data = data2.format(dt);
-            }
-            catch (ParseException ex)
-            {
-                System.out.println("Erro ao converte a data"+ex);
-                 JOptionPane.showMessageDialog(null, "É preciso preencher o campo Data.");
-            }
-            
+            dt = data1.parse(data);
+            SimpleDateFormat data2 = new SimpleDateFormat( "yyyy-MM-dd" );   
+             data = data2.format(dt);
+        }
+        catch (ParseException ex)
+        {
+            System.out.println("Erro ao converte a data"+ex);
+            JOptionPane.showMessageDialog(null, "É preciso preencher o campo Data.");
+        }
+          
+       
+         //testa se é o evento do botão correto.
+        if(ae.getSource() == sd)
+        {
             try
             {
                     //atribuo a variavel os campos do formulario.
                  
-                fonteRenda    = (FonteRenda) entradaUI.jcbFonteRenda.getSelectedItem();
-                tipoCategoria = (Categoria) entradaUI.jcbCategoria.getSelectedItem();
-                descricao     = entradaUI.jtfDescricao.getText();
-                val           = entradaUI.jnfValor.getValue();
+                credor        = (Credor) saidaUI.jcbCredor.getSelectedItem();
+                tipoCategoria = (Categoria) saidaUI.jcbCategoria.getSelectedItem();
+                descricao     = saidaUI.jtfDescricao.getText();
+                val           = saidaUI.jnfValor.getValue();
                 //Faz o cast para double.
                 valor = val.doubleValue();
                 
@@ -97,59 +97,58 @@ public class OuvinteEntrada implements ActionListener
                 JOptionPane.showMessageDialog(null, "Informe um valor válido.");
             }
             
-            ctrl.cadastrarEntrada(data, valor, descricao, tipoCategoria, fonteRenda);
+            ctrl.cadastrarSaida(data, valor, descricao, tipoCategoria, credor);
             
              //limpa os campos do formulario.
-            entradaUI.jtfData.setText("");
-            entradaUI.jcbFonteRenda.setSelectedIndex(0);
-            entradaUI.jcbCategoria.setSelectedIndex(0);
-            entradaUI.jtfDescricao.setText("");
-            entradaUI.jnfValor.setText("");
+            saidaUI.jtfData.setText("");
+            saidaUI.jcbCredor.setSelectedIndex(0);
+            saidaUI.jcbCategoria.setSelectedIndex(0);
+            saidaUI.jtfDescricao.setText("");
+            saidaUI.jnfValor.setText("");
         }
     }
-    public void carregarJComboboxFonteRenda()
+    
+     public void carregarJComboboxCredor()
      {
         //referencia para o objeto DAO. 
-        FonteRendaBD fr = null; 
+        CredorBD credBD = null; 
        
         try
         {
             //Cria o DAO FonteRenda
-            fr = Factory.criarFonteRenda();
+            credBD = Factory.criarCredor();
         }
         catch (SQLException ex)
         {
-            System.out.println("Não foi possível criar fonte de renda. " + ex);
+            System.out.println("Não foi possível criar credor. " + ex);
         }
         
         //cria um ArrayList para trabalhar os dados vindo do banco.
-        ArrayList <FonteRenda> dados = new ArrayList<FonteRenda>(); 
+        ArrayList <Credor> dados = new ArrayList<Credor>(); 
         
         try
         {
            //Metodo que retorna a consulta das fontes de renda cadastradas.
-           dados = fr.listarFonteRenda();
+           dados = credBD.listarCredor();
             
            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             //Carrega com os dados o JComboBox.
            for(int i = 0; i < dados.size(); i++)
            {
-               FonteRenda fonte = dados.get(i);
+               Credor cred = dados.get(i);
                
                //adiciona os dados no model.
               // modelo.addElement(dados.get(i).getId()+" - "+dados.get(i).getNome());
-               modelo.addElement(fonte);
+               modelo.addElement(cred);
            }
            
-           entradaUI.jcbFonteRenda.setModel(modelo);
-           
+           saidaUI.jcbCredor.setModel(modelo);
         }
         catch (SQLException ex)
         {
-            System.out.println("Não foi possível listar fonte de renda. " + ex);
+            System.out.println("Não foi possível listar credores. " + ex);
         }
      }
-     
      public void carregarJComboboxCategoria()
      {
         //referencia para o objeto DAO. 
@@ -170,9 +169,9 @@ public class OuvinteEntrada implements ActionListener
         
         try
         {
-           //Metodo que retorna a consulta das categorias cadastradas passando 
-           //@parametro: tipo 1: Entrada .
-           dados = catBD.listarCategorias(1);
+           //Metodo que retorna a consulta das categorias cadastradas.
+           //@parametro: tipo 2: Saida . 
+           dados = catBD.listarCategorias(2);
             
            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             //Carrega com os dados o JComboBox.
@@ -185,7 +184,7 @@ public class OuvinteEntrada implements ActionListener
                //modelo.addElement(dados.get(i).getId()+" - "+dados.get(i).getNome());
            }
            
-           entradaUI.jcbCategoria.setModel(modelo);
+           saidaUI.jcbCategoria.setModel(modelo);
            
         }
         catch (SQLException ex)

@@ -8,23 +8,23 @@ import DAO.Categoria;
  */
 public class Entrada extends Lancamento
 {
-	private FonteRenda [] fonte;
+	protected FonteRenda  fonte;
  
-        public Entrada(String dt, double vl, String desc, Categoria[] cat, FonteRenda [] fr)
+        public Entrada(String dt, double vl, String desc, Categoria cat, FonteRenda  fr)
         {
             //cosntrutora da classe base.
             super(dt,vl,desc,cat);
             
             //instancia o objeto FonteRenda para agregação
-            this.fonte = new FonteRenda[fr.length];
+            this.fonte = fr;// = fr.setId(n);//new FonteRenda[fr.length];
             
-            int i = 0;
+           /* int i = 0;
         
             while(i < fr.length)
             {
                 this.fonte[i] = fr[i];
                 i++;
-            }
+            }*/
         }        
 
 }

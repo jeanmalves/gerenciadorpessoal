@@ -32,9 +32,13 @@ public class Factory
     {
         return new CredorBD();
     }
-     public static EntradaBD criarEntrada() throws SQLException
+    public static EntradaBD criarEntrada() throws SQLException
     {
         return new EntradaBD();
+    }
+    public static SaidaBD criarSaida() throws SQLException
+    {
+        return new SaidaBD();
     }
             
 }

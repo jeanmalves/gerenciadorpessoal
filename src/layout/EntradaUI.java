@@ -33,91 +33,90 @@ public class EntradaUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jtfData = new javax.swing.JTextField();
         jcbFonteRenda = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jcbCategoria = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jtfDescricao = new javax.swing.JTextField();
-        jNumberFormatField1 = new logica.JNumberFormatField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jbLeft = new javax.swing.JButton();
-        jbRight = new javax.swing.JButton();
-        jbDelete = new javax.swing.JButton();
-        jbUpdate = new javax.swing.JButton();
-        jbAdd = new javax.swing.JButton();
-        jbSave = new javax.swing.JButton();
+        jnfValor = new logica.JNumberFormatField();
+        try{
+            javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter("##/##/####");
+            jtfData = new javax.swing.JFormattedTextField(data);
+            jPanel2 = new javax.swing.JPanel();
+            jbLeft = new javax.swing.JButton();
+            jbRight = new javax.swing.JButton();
+            jbDelete = new javax.swing.JButton();
+            jbUpdate = new javax.swing.JButton();
+            jbAdd = new javax.swing.JButton();
+            jbSave = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Entradas");
+            setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+            setTitle("Entradas");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jLabel1.setText("Data:");
+            jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12));
+            jLabel1.setText("Data:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jLabel2.setText("Valor:");
+            jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
+            jLabel2.setText("Valor:");
 
+            jcbFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+            jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12));
+            jLabel3.setText("Fontes de Renda:");
+
+            jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+            jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12));
+            jLabel4.setText("Categoria:");
+
+            jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12));
+            jLabel5.setText("Descrição:");
+
+            jtfDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+            jnfValor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+            jnfValor.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jnfValorActionPerformed(evt);
+                }
+            });
+
+        }
+        catch (Exception e){}
+        jtfData.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jtfData.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-
-        jcbFonteRenda.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jLabel3.setText("Fontes de Renda:");
-
-        jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jLabel4.setText("Categoria:");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jLabel5.setText("Descrição:");
-
-        jtfDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12));
-
-        jNumberFormatField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jNumberFormatField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jNumberFormatField1ActionPerformed(evt);
-            }
-        });
+        jtfData.setMargin(new java.awt.Insets(2, 30, 2, 2));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(107, 107, 107)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcbFonteRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jcbFonteRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jtfDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(140, 140, 140))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(164, 164, 164)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jNumberFormatField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jnfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(226, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -126,8 +125,7 @@ public class EntradaUI extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
@@ -143,7 +141,7 @@ public class EntradaUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jNumberFormatField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jnfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(71, 71, 71))
         );
 
@@ -222,9 +220,9 @@ public class EntradaUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jNumberFormatField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberFormatField1ActionPerformed
+    private void jnfValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnfValorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jNumberFormatField1ActionPerformed
+    }//GEN-LAST:event_jnfValorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,13 +260,11 @@ public class EntradaUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private logica.JNumberFormatField jNumberFormatField1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbAdd;
@@ -279,8 +275,8 @@ public class EntradaUI extends javax.swing.JFrame {
     private javax.swing.JButton jbUpdate;
     javax.swing.JComboBox jcbCategoria;
     javax.swing.JComboBox jcbFonteRenda;
-    private javax.swing.JTextField jtfData;
-    private javax.swing.JTextField jtfDescricao;
+    logica.JNumberFormatField jnfValor;
+    javax.swing.JFormattedTextField jtfData;
+    javax.swing.JTextField jtfDescricao;
     // End of variables declaration//GEN-END:variables
-    private JFormattedTextField jteste;
 }
