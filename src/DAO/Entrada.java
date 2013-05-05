@@ -9,6 +9,7 @@ import DAO.Categoria;
 public class Entrada extends Lancamento
 {
 	protected FonteRenda  fonte;
+        protected int     id;
  
         public Entrada(String dt, double vl, String desc, Categoria cat, FonteRenda  fr)
         {
@@ -25,6 +26,36 @@ public class Entrada extends Lancamento
                 this.fonte[i] = fr[i];
                 i++;
             }*/
-        }        
+        }
+        
+        public void setData(String dt)
+        {
+            data = dt;
+        }
+        
+        public void setId(int i)
+        {
+            id = i;
+        }
+        /*public void setCategoria (Categoria ct)
+        {
+            categoria = ct;
+        }*/
+        
+        public void setFonteRenda(FonteRenda ft)
+        {
+            fonte = ft;
+        }
+        
+        public void setDescricao(String desc)
+        {
+            
+            descricao = desc;
+        }
+        
+        public void SetValor(double val)
+        {
+            valor = val;
+        }
 
 }

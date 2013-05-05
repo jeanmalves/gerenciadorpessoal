@@ -29,7 +29,6 @@ public class Lancamento
             i++;
         }*/
     }
-  
     public String getData()
     {
         return data;

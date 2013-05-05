@@ -1,9 +1,14 @@
 package layout;
+import DAO.Entrada;
+import DAO.EntradaBD;
+import DAO.EntradaTableModel;
+import DAO.Factory;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.*;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -40,10 +45,6 @@ public class ContaUI extends javax.swing.JFrame {
         //Instancia do ouvinte do saldo inicial.
         OuvinteSaldoInicial ouvSaldoIni = new OuvinteSaldoInicial(this);
         salvarSaldo.addActionListener(ouvSaldoIni);
-        
-       // fonteRenda.addActionListener(new OuvinteFonteRenda());
-      //  fonteRenda.addMouseListener(new OuvinteFonteRenda());
-      //  credores.addMouseListener(new OuvinteCredor());
     
         //instancia o objeto da janela de confirmação para encerrar o programa, ConfirmDialog.
         jConfirm     = new ConfirmJDialog(null,true);
@@ -53,6 +54,60 @@ public class ContaUI extends javax.swing.JFrame {
         
     }
     
+    //teste jtableModel  - em fase de construção
+    /*   private JTable getTblEntrada() {
+        if (listaEntradas == null) {
+            listaEntradas.setModel(getTableModel());
+        }
+        return listaEntradas;
+        }
+        
+        private EntradaTableModel getTableModel() {
+        if (tableModel == null) {
+            tableModel = new EntradaTableModel(criaEntrada());
+        }
+        return tableModel;
+        }
+    */    
+        // cria uma lista com 5 sócios meramente ilustrativos
+     /*   private List<Entrada> ListaEntrada() {
+            EntradaBD ent;
+                try
+            {
+                //Cria o DAO FonteRenda
+                ent = Factory.criarEntrada();
+            }
+            catch (SQLException ex)
+            {
+                System.out.println("Não foi possível criar entrada. " + ex);
+            }
+                List<Entrada> dados = new ArrayList<Entrada>();
+            try
+            {
+                
+               //Metodo que retorna a consulta das fontes de renda cadastradas.
+               dados = ent.listarEntrada();
+
+                //Carrega com os dados o JComboBox.
+               for(int i = 0; i < dados.size(); i++)
+               {
+                   Entrada entrada = dados.get(i);;//new Entrada(entrada.setData(dados));
+
+
+                   //adiciona os dados no model.
+                  // modelo.addElement(dados.get(i).getId()+" - "+dados.get(i).getNome());
+                   dados.addElement(entrada);
+               }
+
+            }
+            catch (SQLException ex)
+            {
+                System.out.println("Não foi possível listar fonte de renda. " + ex);
+            }
+    
+            return dados;
+        }*/
+    //fim jtablemodel
     
     /** This method is called from within the constructor to
      * initialize the form.
@@ -677,4 +732,5 @@ public class ContaUI extends javax.swing.JFrame {
     private CredorUI CredorUI;
     private EntradaUI entradaUI;
     private SaidaUI   saidaUI;
+    private EntradaTableModel tableModel;
 }
